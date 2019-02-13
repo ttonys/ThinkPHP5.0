@@ -1,8 +1,8 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:65:"D:\WAMP\www\tp5\public/../application/admin\view\login\login.html";i:1547634938;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:65:"D:\WAMP\www\tp5\public/../application/admin\view\login\login.html";i:1547903700;}*/ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><!--Head--><head>
     <meta charset="utf-8">
-    <title>童老师ThinkPHP交流群：484519446</title>
+    <title>ThinkPHP</title>
     <meta name="description" content="login page">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,28 +19,32 @@
 <!--Body-->
 
 <body>
-    <div class="login-container animated fadeInDown">
-        <form action="" method="post">
-            <div class="loginbox bg-white">
-                <div class="loginbox-title">SIGN IN</div>
-                <div class="loginbox-textbox">
-                    <input value="admin" class="form-control" placeholder="username" name="username" type="text">
-                </div>
-                <div class="loginbox-textbox">
-                    <input class="form-control" placeholder="password" name="password" type="password">
-                </div>
-                <div class="loginbox-submit">
-                    <input class="btn btn-primary btn-block" value="Login" type="submit">
-                </div>
+<div class="login-container animated fadeInDown">
+    <form action="" method="post">
+        <div class="loginbox bg-white">
+            <div class="loginbox-title">SIGN IN</div>
+            <div class="loginbox-textbox">
+                <input value="admin" class="form-control" placeholder="username" name="username" type="text">
             </div>
-        </form>
-    </div>
-    <!--Basic Scripts-->
-    <script src="http://127.0.0.1/tp5/public/static/admin/style/jquery.js"></script>
-    <script src="http://127.0.0.1/tp5/public/static/admin/style/bootstrap.js"></script>
-    <script src="http://127.0.0.1/tp5/public/static/admin/style/jquery_002.js"></script>
-    <!--Beyond Scripts-->
-    <script src="http://127.0.0.1/tp5/public/static/admin/style/beyond.js"></script>
+            <div class="loginbox-textbox">
+                <input class="form-control" placeholder="password" name="password" type="password">
+            </div>
+            <div class="loginbox-textbox">
+                <input class="form-control" placeholder="code" name="code" style="margin:10px 0;width:80px;float:left;" type="text">
+                <img  style="float:left; cursor:pointer;" src="<?php echo captcha_src(); ?>" alt="captcha" onclick="this.src='<?php echo captcha_src(); ?>?'+Math.random();" />
+            </div>
+            <div class="loginbox-submit">
+                <input class="btn btn-primary btn-block" value="Login" type="submit">
+            </div>
+        </div>
+    </form>
+</div>
+<!--Basic Scripts-->
+<script src="http://127.0.0.1/tp5/public/static/admin/style/jquery.js"></script>
+<script src="http://127.0.0.1/tp5/public/static/admin/style/bootstrap.js"></script>
+<script src="http://127.0.0.1/tp5/public/static/admin/style/jquery_002.js"></script>
+<!--Beyond Scripts-->
+<script src="http://127.0.0.1/tp5/public/static/admin/style/beyond.js"></script>
 
 
 

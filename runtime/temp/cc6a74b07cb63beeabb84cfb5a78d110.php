@@ -1,35 +1,37 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"D:\WAMP\www\tp5\public/../application/admin\view\admin\add.html";i:1547903699;s:54:"D:\WAMP\www\tp5\application\admin\view\common\top.html";i:1547806501;s:55:"D:\WAMP\www\tp5\application\admin\view\common\left.html";i:1547788931;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
-    <title>童老师ThinkPHP交流群：484519446</title>
+    <title>ThinkPHP</title>
 
     <meta name="description" content="Dashboard">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!--Basic Styles-->
-    <link href="ADMIN/style/bootstrap.css" rel="stylesheet">
-    <link href="ADMIN/style/font-awesome.css" rel="stylesheet">
-    <link href="ADMIN/style/weather-icons.css" rel="stylesheet">
+    <link href="http://127.0.0.1/tp5/public/static/admin/style/bootstrap.css" rel="stylesheet">
+    <link href="http://127.0.0.1/tp5/public/static/admin/style/font-awesome.css" rel="stylesheet">
+    <link href="http://127.0.0.1/tp5/public/static/admin/style/weather-icons.css" rel="stylesheet">
 
     <!--Beyond styles-->
-    <link id="beyond-link" href="ADMIN/style/beyond.css" rel="stylesheet" type="text/css">
-    <link href="ADMIN/style/demo.css" rel="stylesheet">
-    <link href="ADMIN/style/typicons.css" rel="stylesheet">
-    <link href="ADMIN/style/animate.css" rel="stylesheet">
+    <link id="beyond-link" href="http://127.0.0.1/tp5/public/static/admin/style/beyond.css" rel="stylesheet" type="text/css">
+    <link href="http://127.0.0.1/tp5/public/static/admin/style/demo.css" rel="stylesheet">
+    <link href="http://127.0.0.1/tp5/public/static/admin/style/typicons.css" rel="stylesheet">
+    <link href="http://127.0.0.1/tp5/public/static/admin/style/animate.css" rel="stylesheet">
     
 </head>
 <body>
 	<!-- 头部 -->
-	<div class="navbar">
+    <div class="navbar">
     <div class="navbar-inner">
         <div class="navbar-container">
             <!-- Navbar Barnd -->
             <div class="navbar-header pull-left">
                 <a href="#" class="navbar-brand">
                     <small>
-                            <img src="ADMIN/images/logo.png" alt="">
-                        </small>
+                        <img
+                                src="http://127.0.0.1/tp5/public/static/admin/images/logo.png" alt="">
+                    </small>
                 </a>
             </div>
             <!-- /Navbar Barnd -->
@@ -45,24 +47,25 @@
                         <li>
                             <a class="login-area dropdown-toggle" data-toggle="dropdown">
                                 <div class="avatar" title="View your public profile">
-                                    <img src="ADMIN/images/adam-jansen.jpg">
+                                    <img
+                                            src="http://127.0.0.1/tp5/public/static/admin/images/adam-jansen.jpg">
                                 </div>
                                 <section>
-                                    <h2><span class="profile"><span>admin</span></span></h2>
+                                    <h2><span class="profile"><span><?php echo \think\Request::instance()->session('username'); ?></span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <li class="username"><a>David Stevenson</a></li>
                                 <li class="dropdown-footer">
-                                    <a href="/admin/user/logout.html">
-                                            退出登录
-                                        </a>
+                                    <a href="<?php echo url('admin/logout'); ?>">
+                                        退出登录
+                                    </a>
                                 </li>
                                 <li class="dropdown-footer">
-                                    <a href="/admin/user/changePwd.html">
-                                            修改密码
-                                        </a>
+                                    <a href="<?php echo url('admin/edit',array('id'=>\think\Request::instance()->session('uid'))); ?>">
+                                        修改密码
+                                    </a>
                                 </li>
                             </ul>
                             <!--/Login Area Dropdown-->
@@ -78,85 +81,97 @@
         </div>
     </div>
 </div>
-
 	<!-- /头部 -->
 	
 	<div class="main-container container-fluid">
 		<div class="page-container">
 			            <!-- Page Sidebar -->
             <div class="page-sidebar" id="sidebar">
-                <!-- Page Sidebar Header-->
-                <div class="sidebar-header-wrapper">
-                    <input class="searchinput" type="text">
-                    <i class="searchicon fa fa-search"></i>
-                    <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
-                </div>
-                <!-- /Page Sidebar Header -->
-                <!-- Sidebar Menu -->
-                <ul class="nav sidebar-menu">
-                    <!--Dashboard-->
-                    <li>
-                        <a href="#" class="menu-dropdown">
-                            <i class="menu-icon fa fa-user"></i>
-                            <span class="menu-text">管理员</span>
-                            <i class="menu-expand"></i>
-                        </a>
-                        <ul class="submenu">
-                            <li>
-                                <a href="/admin/document/index.html">
+    <!-- Page Sidebar Header-->
+    <div class="sidebar-header-wrapper">
+        <input class="searchinput" type="text">
+        <i class="searchicon fa fa-search"></i>
+        <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
+    </div>
+    <!-- /Page Sidebar Header -->
+    <!-- Sidebar Menu -->
+    <ul class="nav sidebar-menu">
+        <!--Dashboard-->
+
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-user"></i>
+                <span class="menu-text">管理员 </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<?php echo url('admin/lst'); ?>">
                                     <span class="menu-text">
                                         管理列表                                    </span>
-                                    <i class="menu-expand"></i>
-                                </a>
-                            </li>
-                        </ul>                            
-                    </li> 
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
 
-                    <li>
-                        <a href="#" class="menu-dropdown">
-                            <i class="menu-icon fa fa-file-text"></i>
-                            <span class="menu-text">文档</span>
-                            <i class="menu-expand"></i>
-                        </a>
-                        <ul class="submenu">
-                            <li>
-                                <a href="/admin/document/index.html">
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text">栏目管理</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<?php echo url('cate/lst'); ?>">
+                                    <span class="menu-text">
+                                        栏目列表                                   </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-file-text"></i>
+                <span class="menu-text">文档</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<?php echo url('article/lst'); ?>">
                                     <span class="menu-text">
                                         文章列表                                    </span>
-                                    <i class="menu-expand"></i>
-                                </a>
-                            </li>
-                        </ul>                            
-                    </li> 
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
 
-                    <li>
-                        <a href="#" class="menu-dropdown">
-                            <i class="menu-icon fa fa-gear"></i>
-                            <span class="menu-text">系统</span>
-                            <i class="menu-expand"></i>
-                        </a>
-                        <ul class="submenu">
-                            <li>
-                                <a href="/admin/document/index.html">
+
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-gear"></i>
+                <span class="menu-text">系统</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<?php echo url('tags/lst'); ?>">
                                     <span class="menu-text">
-                                        配置                                   </span>
-                                    <i class="menu-expand"></i>
-                                </a>
-                            </li>
-                        </ul>                            
-                    </li>  
+                                        Tags标签管理                                  </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
 
-                    <li>
-                        <a href="http://www.chuanke.com/s2260700.html" class="menu-dropdown">
-                            <i class="menu-icon fa fa-gear"></i>
-                            <span class="menu-text">视频教程</span>
-                            <i class="menu-expand"></i>
-                        </a>                           
-                    </li>                          
-                    
-                </ul>
-                <!-- /Sidebar Menu -->
-            </div>
+
+
+    </ul>
+    <!-- /Sidebar Menu -->
+</div>
             <!-- /Page Sidebar -->
             <!-- Page Content -->
             <div class="page-content">
@@ -164,10 +179,10 @@
                 <div class="page-breadcrumbs">
                     <ul class="breadcrumb">
                                         <li>
-                        <a href="#">系统</a>
+                        <a href="<?php echo url('./index'); ?>">系统</a>
                     </li>
                                         <li>
-                        <a href="#">用户管理</a>
+                        <a href="<?php echo url('admin/lst'); ?>">用户管理</a>
                     </li>
                                         <li class="active">添加用户</li>
                                         </ul>
@@ -195,12 +210,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="group_id" class="col-sm-2 control-label no-padding-right">用户角色</label>
+                            <label for="group_id" class="col-sm-2 control-label no-padding-right">用户密码</label>
                             <div class="col-sm-6">
-                                <select name="group_id" style="width: 100%;">
-                                                                        <option selected="selected" value="8">测试</option>
-                                                                    </select>
+                                <input class="form-control" id="password" placeholder="" name="password" required="" type="text">
                             </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
                         </div>  
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
@@ -222,11 +236,11 @@
 	</div>
 
 	    <!--Basic Scripts-->
-    <script src="ADMIN/style/jquery_002.js"></script>
-    <script src="ADMIN/style/bootstrap.js"></script>
-    <script src="ADMIN/style/jquery.js"></script>
+    <script src="http://127.0.0.1/tp5/public/static/admin/style/jquery_002.js"></script>
+    <script src="http://127.0.0.1/tp5/public/static/admin/style/bootstrap.js"></script>
+    <script src="http://127.0.0.1/tp5/public/static/admin/style/jquery.js"></script>
     <!--Beyond Scripts-->
-    <script src="ADMIN/style/beyond.js"></script>
+    <script src="http://127.0.0.1/tp5/public/static/admin/style/beyond.js"></script>
     
 
 
